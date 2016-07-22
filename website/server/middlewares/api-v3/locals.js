@@ -14,7 +14,7 @@ import { mods } from '../../models/user';
 // items from `env` used on the client will have to be specified in this array
 const CLIENT_VARS = ['language', 'isStaticPage', 'availableLanguages', 'translations',
                   'FACEBOOK_KEY', 'NODE_ENV', 'BASE_URL', 'GA_ID',
-                  'AMAZON_PAYMENTS', 'STRIPE_PUB_KEY', 'AMPLITUDE_KEY',
+                  'AMAZON_PAYMENTS', 'STRIPE_PUB_KEY', 'AMPLITUDE_KEY', 'NEWS_DATE',
                   'worldDmg', 'mods', 'IS_MOBILE', 'PUSHER:KEY', 'PUSHER:ENABLED'];
 
 let env = {
@@ -32,7 +32,7 @@ let env = {
   },
 };
 
-'NODE_ENV BASE_URL GA_ID STRIPE_PUB_KEY FACEBOOK_KEY AMPLITUDE_KEY PUSHER:KEY PUSHER:ENABLED'
+'NODE_ENV BASE_URL GA_ID STRIPE_PUB_KEY FACEBOOK_KEY AMPLITUDE_KEY PUSHER:KEY PUSHER:ENABLED NEWS_DATE'
   .split(' ')
   .forEach(key => {
     env[key] = nconf.get(key);

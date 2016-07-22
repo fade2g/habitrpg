@@ -72,5 +72,6 @@
         "APP_ID": "appId",
         "KEY": "key",
         "SECRET": "secret"
-    }
+    },
+    "NEWS_DATE": "2016-07-21T18:44:21.484Z"
 }
