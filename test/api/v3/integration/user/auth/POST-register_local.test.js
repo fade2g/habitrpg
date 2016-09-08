@@ -33,6 +33,22 @@ describe('POST /user/auth/local/register', () => {
       expect(user.auth.local.username).to.eql(username);
     });
 
+    it('enrolls new users in an A/B test', async () => {
+      let username = generateRandomUserName();
+      let email = `${username}@example.com`;
+      let password = 'password';
+
+      let user = await api.post('/user/auth/local/register', {
+        username,
+        email,
+        password,
+        confirmPassword: password,
+      });
+
+      expect(user.ABtest).to.exist;
+      expect(user.ABtest).to.be.a('string');
+    });
+
     it('requires password and confirmPassword to match', async () => {
       let username = generateRandomUserName();
       let email = `${username}@example.com`;
